@@ -963,25 +963,7 @@ async function openShowroomDetail(id){
 async function saveShowroomPhases(id){
   const s=state.showrooms.find(x=>x.id===id);if(!s)return;
   const startDate=s.startDate?new Date(s.startDate):null;const phaseUpdates={};let hasValidationError=false;
-  document.querySelectorAll('.phase-date').forEach(i=>{
-    const pid=i.dataset.phase;
-    const val=i.value;
-    i.classList.remove('input-error');
-    if(!val||!startDate)return;
-    const actualDate=new Date(val);
-    if(actualDate<startDate){
-      i.classList.add('input-error');
-      showToast(`${PHASES_CONFIG.find(p=>p.id===pid)?.name||pid}: Date cannot be before start date`,'error');
-      hasValidationError=true;
-      return;
-    }
-    const phaseConfig=PHASES_CONFIG.find(p=>p.id===pid);
-    if(!phaseConfig)return;
-    const targetDate=new Date(startDate);
-    targetDate.setDate(startDate.getDate()+phaseConfig.days);
-    const diff=Math.ceil((actualDate-targetDate)/86400000);
-    if(diff>phaseConfig.days*2)i.classList.add('input-error');
-  });
+  document.querySelectorAll('.phase-date').forEach(i=>{const pid=i.dataset.phase;const val=i.value;if(val&&startDate){const actualDate=new Date(val);if(actualDate<startDate){i.classList.add('input-error');showToast(`${PHASES_CONFIG.find(p=>p.id===pid)?.name||pid}: Date cannot be before start date`,'error');hasValidationError=true;}else{const phaseConfig=PHASES_CONFIG.find(p=>p.id===pid);if(phaseConfig){const targetDate=new Date(startDate);targetDate.setDate(startDate.getDate()+phaseConfig.days);const diff=Math.ceil((actualDate-targetDate)/86400000);if(diff>phaseConfig.days*2){i.classList.add('input-error');}}}else{i.classList.remove('input-error');}}});
   if(hasValidationError){showToast('Fix validation errors before saving','error');return;}
   // Fix #17: Check SLA >2x and confirm
   let slaOverMax=false;
