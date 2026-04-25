@@ -127,7 +127,7 @@
     .topbar-btn.primary:hover{background:var(--blue-600);border-color:var(--blue-600);box-shadow:var(--shadow-blue);}
     .page-content{flex:1;padding:28px 32px;}
     .alert-banner{border-radius:var(--r-lg);padding:14px 20px;margin-bottom:24px;display:none;align-items:center;gap:14px;font-size:0.85rem;}
-    .alert-banner.critical{background:linear-gradient(135deg,var(--red-50),#FFF5F5);border:1px solid #FECACA;color:var(--red-700);display:flex;}
+    .alert-banner.critical{background:linear-gradient(135deg,var(--red-50),var(--red-100));border:1px solid #FECACA;color:var(--red-700);display:flex;} /* FIXED: 15 remove hardcoded light color */
     .alert-banner.warning{background:var(--amber-50);border:1px solid var(--amber-100);color:var(--amber-600);display:flex;}
     .alert-banner.info{background:var(--blue-50);border:1px solid var(--blue-100);color:var(--blue-600);display:flex;}
     .alert-icon{font-size:1.1rem;flex-shrink:0;}
@@ -136,7 +136,7 @@
     .alert-desc{opacity:0.8;font-size:0.8rem;}
     .alert-dismiss{background:none;border:none;cursor:pointer;opacity:0.5;font-size:1.1rem;padding:4px;color:inherit;}
     .alert-dismiss:hover{opacity:1;}
-    .anomaly-alert{background:linear-gradient(135deg,#FFF7ED,var(--amber-50));border:1px solid #FED7AA;color:var(--amber-700);display:flex;margin-bottom:16px;}
+    .anomaly-alert{background:linear-gradient(135deg,var(--amber-50),var(--amber-100));border:1px solid #FED7AA;color:var(--amber-700);display:flex;margin-bottom:16px;} /* FIXED: 15 remove hardcoded light color */
     /* Dirty form indicator */
     .modal-dirty-indicator{position:absolute;top:16px;right:60px;width:8px;height:8px;background:var(--amber-500);border-radius:50%;animation:pulse 1.5s infinite;display:none;}
     .modal-dirty-indicator.visible{display:block;}
@@ -294,13 +294,13 @@
     .form-label{display:block;font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;color:var(--text-secondary);margin-bottom:7px;}
     .form-input,.form-select,.form-textarea{width:100%;padding:10px 14px;border:1px solid var(--slate-200);border-radius:var(--r-sm);font-size:0.875rem;color:var(--text-primary);background:var(--surface);transition:border-color var(--dur-fast),box-shadow var(--dur-fast);outline:none;}
     .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--blue-400);box-shadow:0 0 0 3px rgba(59,130,246,0.12);}
-    .form-input.input-error{border-color:var(--red-400);box-shadow:0 0 0 3px rgba(239,68,68,0.15);background:#FFF5F5;}
+    .form-input.input-error{border-color:var(--red-400);box-shadow:0 0 0 3px rgba(239,68,68,0.15);background:var(--red-50);} /* FIXED: 15 remove hardcoded light color */
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
     .phase-table{width:100%;border-collapse:collapse;font-size:0.82rem;}
     .phase-table thead th{background:var(--slate-50);padding:10px 14px;text-align:left;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--text-muted);border-bottom:1px solid var(--surface-border);position:sticky;top:0;}
     .phase-table tbody td{padding:10px 14px;border-bottom:1px solid var(--surface-border);vertical-align:middle;}
     .phase-table tbody tr:hover{background:var(--slate-50);}
-    .phase-table tbody tr.row-delayed{background:#FFF5F5;}.phase-table tbody tr.row-delayed:hover{background:#FEE8E8;}
+    .phase-table tbody tr.row-delayed{background:var(--red-50);}.phase-table tbody tr.row-delayed:hover{background:var(--red-100);} /* FIXED: 15 remove hardcoded light color */
     .phase-name{font-weight:600;color:var(--text-primary);}
     .stage-stepper{display:flex;gap:0;background:var(--slate-100);border-radius:var(--r-lg);padding:4px;margin-bottom:20px;overflow-x:auto;}
     .stage-step{flex:1;text-align:center;padding:9px 8px;border-radius:var(--r-md);font-size:0.76rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:all var(--dur-fast);color:var(--text-muted);min-width:90px;border:none;background:none;}
@@ -316,6 +316,8 @@
     .doc-item-status{font-size:0.7rem;font-weight:700;}
     .doc-item-status.done{color:var(--emerald-600);}.doc-item-status.pending{color:var(--amber-600);}
     .toast-container{position:fixed;bottom:24px;right:24px;z-index:2000;display:flex;flex-direction:column;gap:10px;}
+    .hamburger-btn{display:none;align-items:center;justify-content:center;width:38px;height:38px;border-radius:var(--r-sm);border:1px solid var(--surface-border);background:var(--surface);color:var(--text-secondary);}
+    .sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(15,23,42,0.45);z-index:180;}
     .toast{display:flex;align-items:center;gap:12px;background:var(--slate-800);color:white;padding:13px 18px;border-radius:var(--r-md);font-size:0.83rem;font-weight:500;box-shadow:var(--shadow-xl);animation:slideRight 0.3s var(--ease-out) both;max-width:340px;}
     .toast-icon{font-size:1rem;flex-shrink:0;}
     @keyframes slideRight{from{transform:translateX(110%);opacity:0;}to{transform:translateX(0);opacity:1;}}
@@ -323,13 +325,13 @@
     .app-footer{text-align:center;padding:18px 32px;border-top:1px solid var(--surface-border);font-size:0.78rem;color:var(--text-muted);background:var(--surface);}
     .app-footer strong{color:var(--blue-600);}
     @media(max-width:1024px){:root{--sidebar-width:68px;}.sidebar-appname,.sidebar-tagline,.nav-section-label,.nav-item span,.sidebar-alert,.user-info{display:none;}.nav-item{justify-content:center;padding:12px;}.nav-badge{position:absolute;top:6px;right:6px;}.nav-item{position:relative;}}
-    @media(max-width:768px){.main-wrapper{margin-left:0;}.sidebar{transform:translateX(-100%);}.page-content{padding:16px;}.kpi-grid{grid-template-columns:repeat(2,1fr);}.card-grid{grid-template-columns:1fr;}.analytics-grid{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}.topbar{padding:0 16px;}.delay-contributors{grid-template-columns:1fr;}.exec-brief-body{grid-template-columns:1fr;}}
+    @media(max-width:768px){.main-wrapper{margin-left:0;}.sidebar{transform:translateX(-100%);transition:transform var(--dur-base);}.sidebar.mobile-open{transform:translateX(0);}.sidebar-overlay.active{display:block;}.page-content{padding:16px;}.kpi-grid{grid-template-columns:repeat(2,1fr);}.card-grid{grid-template-columns:1fr;}.analytics-grid{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}.topbar{padding:0 16px;}.delay-contributors{grid-template-columns:1fr;}.exec-brief-body{grid-template-columns:1fr;}.hamburger-btn{display:flex!important;}}
   </style>
 </head>
 <body>
-<div id="loginScreen" class="login-screen"><div class="login-card"><div class="login-logo-wrap"><img src="https://www.aiswindows.com/assets/images/ais-windows-logo.svg" alt="AIS" class="login-logo-img"><div class="login-title">AIS Command Center</div><div class="login-sub">Enterprise Operations Platform</div></div><div class="login-field"><label>Email Address</label><input type="email" id="loginUsername" placeholder="your@email.com" autocomplete="username"></div><div class="login-field"><label>Password</label><input type="password" id="loginPassword" placeholder="••••••••" autocomplete="current-password"></div><button class="btn-login" id="loginButton">Sign In →</button><div id="loginError"></div></div></div>
-<div id="mainApp"><div class="shell"><aside class="sidebar" id="sidebar"><div class="sidebar-header"><div class="sidebar-logo"><img src="https://www.aiswindows.com/assets/images/ais-windows-logo.svg" alt="AIS"><div class="sidebar-appname">Command Center</div><div class="sidebar-tagline">Showrooms · Dealers · Ops</div></div></div><div class="sidebar-alert" id="sidebarAlert"><strong>⚠ Critical Delays</strong><span id="sidebarAlertText"></span></div><nav class="sidebar-nav"><div class="nav-section-label">Operations</div><button class="nav-item active" id="nav-dashboard"><i class="nav-icon fas fa-th-large"></i><span>Showrooms</span><span class="nav-badge" id="navBadgeShowrooms" style="display:none"></span></button><button class="nav-item" id="nav-dealers"><i class="nav-icon fas fa-users"></i><span>Dealers</span><span class="nav-badge" id="navBadgeDealers" style="display:none"></span></button><div class="nav-section-label">Intelligence</div><button class="nav-item" id="nav-analytics"><i class="nav-icon fas fa-chart-bar"></i><span>Analytics</span></button><div class="nav-section-label">Tools</div><button class="nav-item" id="exportShowroomsExcelBtn"><i class="nav-icon fas fa-file-excel"></i><span>Export Showrooms</span></button><button class="nav-item" id="exportDealersExcelBtn"><i class="nav-icon fas fa-file-excel"></i><span>Export Dealers</span></button><button class="nav-item" id="exportExecutiveReportBtn"><i class="nav-icon fas fa-file-excel"></i><span>Full Executive Report</span></button><button class="nav-item" id="exportExecutivePackBtn"><i class="nav-icon fas fa-file-pdf"></i><span>Executive Pack (PDF)</span></button><button class="nav-item" id="backupDataBtn"><i class="nav-icon fas fa-database"></i><span>Backup Data</span></button></nav><div class="sidebar-footer"><div class="sidebar-user"><div class="user-avatar" id="userAvatar">U</div><div class="user-info"><div class="user-name" id="userName">User</div><div class="user-role" id="userRoleText">Loading…</div></div><button class="btn-logout" id="logoutBtn" title="Logout"><i class="fas fa-sign-out-alt"></i></button></div></div></aside>
-<div class="main-wrapper"><header class="topbar"><div class="topbar-left"><div><div class="page-title" id="pageTitle">Showrooms</div><div class="page-breadcrumb"><span>AIS Command Center</span><i class="fas fa-chevron-right" style="font-size:0.6rem"></i><span id="pageBreadcrumb">Showroom Execution</span></div></div></div><div class="topbar-right"><div class="notif-bell-wrap" id="notifBellWrap"><button class="notif-bell-btn" id="notifBellBtn" title="Notifications"><i class="fas fa-bell"></i><span class="notif-bell-count" id="notifBellCount" style="display:none">0</span></button><div class="notif-dropdown" id="notifDropdown"><div class="notif-header"><h4>Notifications</h4><div class="notif-header-actions"><button id="markAllReadBtn">Mark All Read</button><button id="clearAllNotifsBtn">Clear All</button></div></div><div id="notifList"><div class="notif-empty">No notifications</div></div></div></div><div class="role-chip" id="roleBadge"></div><button class="topbar-btn primary" id="addEntityBtn"><i class="fas fa-plus"></i> Add Showroom</button></div></header>
+<div id="loginScreen" class="login-screen"><div class="login-card"><div class="login-logo-wrap"><img src="https://www.aiswindows.com/assets/images/ais-windows-logo.svg" alt="AIS" class="login-logo-img"><div class="login-title">AIS Command Center</div><div class="login-sub">Enterprise Operations Platform</div></div><div class="login-field"><label for="loginUsername">Email Address</label><input type="email" id="loginUsername" placeholder="your@email.com" autocomplete="username"></div><div class="login-field"><label for="loginPassword">Password</label><input type="password" id="loginPassword" placeholder="••••••••" autocomplete="current-password"></div><button class="btn-login" id="loginButton">Sign In →</button><div id="loginError"></div></div></div>
+<div id="mainApp"><div id="sidebarOverlay" class="sidebar-overlay"></div><div class="shell"><aside class="sidebar" id="sidebar"><div class="sidebar-header"><div class="sidebar-logo"><img src="https://www.aiswindows.com/assets/images/ais-windows-logo.svg" alt="AIS"><div class="sidebar-appname">Command Center</div><div class="sidebar-tagline">Showrooms · Dealers · Ops</div></div></div><div class="sidebar-alert" id="sidebarAlert"><strong>⚠ Critical Delays</strong><span id="sidebarAlertText"></span></div><nav class="sidebar-nav"><div class="nav-section-label">Operations</div><button class="nav-item active" id="nav-dashboard" aria-current="page"><i class="nav-icon fas fa-th-large"></i><span>Showrooms</span><span class="nav-badge" id="navBadgeShowrooms" style="display:none"></span></button><button class="nav-item" id="nav-dealers" aria-current="false"><i class="nav-icon fas fa-users"></i><span>Dealers</span><span class="nav-badge" id="navBadgeDealers" style="display:none"></span></button><div class="nav-section-label">Intelligence</div><button class="nav-item" id="nav-analytics" aria-current="false"><i class="nav-icon fas fa-chart-bar"></i><span>Analytics</span></button><div class="nav-section-label">Tools</div><button class="nav-item" id="exportShowroomsExcelBtn"><i class="nav-icon fas fa-file-excel"></i><span>Export Showrooms</span></button><button class="nav-item" id="exportDealersExcelBtn"><i class="nav-icon fas fa-file-excel"></i><span>Export Dealers</span></button><button class="nav-item" id="exportExecutiveReportBtn"><i class="nav-icon fas fa-file-excel"></i><span>Full Executive Report</span></button><button class="nav-item" id="exportExecutivePackBtn"><i class="nav-icon fas fa-file-pdf"></i><span>Executive Pack (PDF)</span></button><button class="nav-item" id="backupDataBtn"><i class="nav-icon fas fa-database"></i><span>Backup Data</span></button></nav><div class="sidebar-footer"><div class="sidebar-user"><div class="user-avatar" id="userAvatar">U</div><div class="user-info"><div class="user-name" id="userName">User</div><div class="user-role" id="userRoleText">Loading…</div></div><button class="btn-logout" id="logoutBtn" title="Logout"><i class="fas fa-sign-out-alt"></i></button></div></div></aside>
+<div class="main-wrapper"><header class="topbar"><div class="topbar-left"><button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle sidebar"><i class="fas fa-bars"></i></button><div><div class="page-title" id="pageTitle">Showrooms</div><div class="page-breadcrumb"><span>AIS Command Center</span><i class="fas fa-chevron-right" style="font-size:0.6rem"></i><span id="pageBreadcrumb">Showroom Execution</span></div></div></div><div class="topbar-right"><div class="notif-bell-wrap" id="notifBellWrap"><button class="notif-bell-btn" id="notifBellBtn" title="Notifications" aria-label="Notifications" aria-haspopup="true"><i class="fas fa-bell"></i><span class="notif-bell-count" id="notifBellCount" style="display:none" aria-live="polite" aria-atomic="true">0</span></button><div class="notif-dropdown" id="notifDropdown"><div class="notif-header"><h4>Notifications</h4><div class="notif-header-actions"><button id="markAllReadBtn">Mark All Read</button><button id="clearAllNotifsBtn">Clear All</button></div></div><div id="notifList"><div class="notif-empty">No notifications</div></div></div></div><div class="role-chip" id="roleBadge"></div><button class="topbar-btn primary" id="addEntityBtn"><i class="fas fa-plus"></i> Add Showroom</button></div></header>
 <main class="page-content" id="mainContent">
 <div id="dashboardView">
   <div class="alert-banner" id="alertBanner"><div class="alert-icon"></div><div class="alert-content"><div class="alert-title" id="alertTitle"></div><div class="alert-desc" id="alertDesc"></div></div><button class="alert-dismiss" id="dismissAlertBtn">&times;</button></div>
@@ -383,29 +385,41 @@
 </div></div></div>
 
 <!-- MODALS -->
-<div id="showroomDetailModal" class="modal-overlay"><div class="modal-container" style="max-width:1020px"><div class="modal-header"><div class="modal-title" id="showroomDetailTitle"></div><div class="modal-dirty-indicator" id="showroomDirtyIndicator"></div><button class="modal-close" data-modal="showroomDetailModal">&times;</button></div><div class="modal-body" id="showroomDetailContent"></div><div class="modal-footer"><button class="btn btn-outline btn-sm" id="showroomEditBtn" style="display:none"><i class="fas fa-pen"></i>Edit</button><button class="btn btn-danger btn-sm" id="showroomDeleteBtn" style="display:none"><i class="fas fa-trash"></i>Delete</button><button class="btn btn-outline btn-sm" data-modal="showroomDetailModal">Close</button></div></div></div>
-<div id="dealerDetailModal" class="modal-overlay"><div class="modal-container" style="max-width:720px"><div class="modal-header"><div class="modal-title" id="detailDealerName"></div><div class="modal-dirty-indicator" id="dealerDirtyIndicator"></div><button class="modal-close" data-modal="dealerDetailModal">&times;</button></div><div class="modal-body" id="dealerDetailContent"></div><div class="modal-footer"><button class="btn btn-outline btn-sm" id="dealerEditBtn" style="display:none"><i class="fas fa-pen"></i>Edit</button><button class="btn btn-danger btn-sm" id="dealerDeleteBtn" style="display:none"><i class="fas fa-trash"></i>Delete</button><button class="btn btn-outline btn-sm" data-modal="dealerDetailModal">Close</button></div></div></div>
-<div id="addShowroomModal" class="modal-overlay"><div class="modal-container" style="max-width:560px"><div class="modal-header"><div class="modal-title">+ New Showroom</div><button class="modal-close" data-modal="addShowroomModal">&times;</button></div><div class="modal-body"><div class="form-row"><div class="form-group"><label class="form-label">Showroom Name</label><input type="text" id="newShowroomName" class="form-input" placeholder="e.g. Delhi South Showroom"></div><div class="form-group"><label class="form-label">City</label><input type="text" id="newShowroomCity" class="form-input" placeholder="e.g. New Delhi"></div></div><div class="form-row"><div class="form-group"><label class="form-label">Dealer Name</label><input type="text" id="newShowroomDealerName" class="form-input" placeholder="Dealer / Contact Name"></div><div class="form-group"><label class="form-label">Mobile Number</label><input type="text" id="newShowroomMobile" class="form-input" placeholder="+91 00000 00000"></div></div><div class="form-row"><div class="form-group"><label class="form-label">RM Name</label><input type="text" id="newShowroomRM" class="form-input" placeholder="Assigned RM"></div><div class="form-group"><label class="form-label">Start Date</label><input type="date" id="newShowroomStart" class="form-input"></div></div></div><div class="modal-footer"><button class="btn btn-outline" data-modal="addShowroomModal">Cancel</button><button class="btn btn-primary" id="confirmAddShowroomBtn"><i class="fas fa-plus"></i>Create Showroom</button></div></div></div>
-<div id="addDealerModal" class="modal-overlay"><div class="modal-container" style="max-width:560px"><div class="modal-header"><div class="modal-title">+ New Dealer</div><button class="modal-close" data-modal="addDealerModal">&times;</button></div><div class="modal-body"><div class="form-row"><div class="form-group"><label class="form-label">Dealer Name</label><input type="text" id="newDealerName" class="form-input" placeholder="Dealer / Business Name"></div><div class="form-group"><label class="form-label">Firm Name</label><input type="text" id="newDealerFirmName" class="form-input" placeholder="Registered Firm Name"></div></div><div class="form-row"><div class="form-group"><label class="form-label">City</label><input type="text" id="newDealerCity" class="form-input" placeholder="City"></div><div class="form-group"><label class="form-label">Mobile Number</label><input type="text" id="newDealerMobile" class="form-input" placeholder="+91 00000 00000"></div></div><div class="form-row"><div class="form-group"><label class="form-label">RM Name</label><input type="text" id="newDealerRM" class="form-input" placeholder="Assigned RM"></div><div class="form-group"><label class="form-label">Start Date</label><input type="date" id="newDealerStart" class="form-input"></div></div></div><div class="modal-footer"><button class="btn btn-outline" data-modal="addDealerModal">Cancel</button><button class="btn btn-primary" id="confirmAddDealerBtn"><i class="fas fa-plus"></i>Create Dealer</button></div></div></div>
-<div id="edit-showroom-modal" class="modal-overlay"><div class="modal-container" style="max-width:560px"><div class="modal-header"><div class="modal-title">Edit Showroom</div><button class="modal-close" data-modal="edit-showroom-modal">&times;</button></div><div class="modal-body"><div class="form-row"><div class="form-group"><label class="form-label">Name</label><input type="text" id="edit-showroom-name" class="form-input"></div><div class="form-group"><label class="form-label">City</label><input type="text" id="edit-showroom-city" class="form-input"></div></div><div class="form-row"><div class="form-group"><label class="form-label">Dealer Name</label><input type="text" id="edit-showroom-dealerName" class="form-input"></div><div class="form-group"><label class="form-label">Mobile Number</label><input type="text" id="edit-showroom-mobile" class="form-input"></div></div><div class="form-row"><div class="form-group"><label class="form-label">RM</label><input type="text" id="edit-showroom-rm" class="form-input"></div><div class="form-group"><label class="form-label">Start Date</label><input type="date" id="edit-showroom-start" class="form-input"></div></div></div><div class="modal-footer"><button class="btn btn-outline" data-modal="edit-showroom-modal">Cancel</button><button class="btn btn-primary" id="saveEditShowroomBtn">Save Changes</button></div></div></div>
-<div id="edit-dealer-modal" class="modal-overlay"><div class="modal-container" style="max-width:560px"><div class="modal-header"><div class="modal-title">Edit Dealer</div><button class="modal-close" data-modal="edit-dealer-modal">&times;</button></div><div class="modal-body"><div class="form-row"><div class="form-group"><label class="form-label">Name</label><input type="text" id="edit-dealer-name" class="form-input"></div><div class="form-group"><label class="form-label">Firm Name</label><input type="text" id="edit-dealer-firmName" class="form-input"></div></div><div class="form-row"><div class="form-group"><label class="form-label">City</label><input type="text" id="edit-dealer-city" class="form-input"></div><div class="form-group"><label class="form-label">Mobile Number</label><input type="text" id="edit-dealer-mobile" class="form-input"></div></div><div class="form-row"><div class="form-group"><label class="form-label">RM</label><input type="text" id="edit-dealer-rm" class="form-input"></div><div class="form-group"><label class="form-label">Start Date</label><input type="date" id="edit-dealer-start" class="form-input"></div></div></div><div class="modal-footer"><button class="btn btn-outline" data-modal="edit-dealer-modal">Cancel</button><button class="btn btn-primary" id="saveEditDealerBtn">Save Changes</button></div></div></div>
-<div id="rejectionReasonModal" class="modal-overlay"><div class="modal-container" style="max-width:480px"><div class="modal-header"><div class="modal-title" id="rejectionTitle">Rejection Reason</div><button class="modal-close" data-modal="rejectionReasonModal">&times;</button></div><div class="modal-body"><div class="form-group"><label class="form-label">Reason for Rejection <span style="color:var(--red-500)">*</span></label><textarea id="rejectionReasonText" class="form-textarea" rows="4" placeholder="Provide the reason for rejecting this dealer…" style="resize:vertical;"></textarea></div></div><div class="modal-footer"><button class="btn btn-outline" data-modal="rejectionReasonModal">Cancel</button><button class="btn btn-danger" id="confirmRejectionBtn"><i class="fas fa-ban"></i>Confirm Rejection</button></div></div></div>
+<div id="showroomDetailModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="showroomDetailTitle"><div class="modal-container" style="max-width:1020px"><div class="modal-header"><div class="modal-title" id="showroomDetailTitle"></div><div class="modal-dirty-indicator" id="showroomDirtyIndicator"></div><button class="modal-close" data-modal="showroomDetailModal">&times;</button></div><div class="modal-body" id="showroomDetailContent"></div><div class="modal-footer"><button class="btn btn-outline btn-sm" id="showroomEditBtn" style="display:none"><i class="fas fa-pen"></i>Edit</button><button class="btn btn-danger btn-sm" id="showroomDeleteBtn" style="display:none"><i class="fas fa-trash"></i>Delete</button><button class="btn btn-outline btn-sm" data-modal="showroomDetailModal">Close</button></div></div></div>
+<div id="dealerDetailModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="detailDealerName"><div class="modal-container" style="max-width:720px"><div class="modal-header"><div class="modal-title" id="detailDealerName"></div><div class="modal-dirty-indicator" id="dealerDirtyIndicator"></div><button class="modal-close" data-modal="dealerDetailModal">&times;</button></div><div class="modal-body" id="dealerDetailContent"></div><div class="modal-footer"><button class="btn btn-outline btn-sm" id="dealerEditBtn" style="display:none"><i class="fas fa-pen"></i>Edit</button><button class="btn btn-danger btn-sm" id="dealerDeleteBtn" style="display:none"><i class="fas fa-trash"></i>Delete</button><button class="btn btn-outline btn-sm" data-modal="dealerDetailModal">Close</button></div></div></div>
+<div id="addShowroomModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="addShowroomTitle"><div class="modal-container" style="max-width:560px"><div class="modal-header"><div class="modal-title" id="addShowroomTitle">+ New Showroom</div><button class="modal-close" data-modal="addShowroomModal">&times;</button></div><div class="modal-body"><div class="form-row"><div class="form-group"><label class="form-label">Showroom Name</label><input type="text" id="newShowroomName" class="form-input" placeholder="e.g. Delhi South Showroom"></div><div class="form-group"><label class="form-label">City</label><input type="text" id="newShowroomCity" class="form-input" placeholder="e.g. New Delhi"></div></div><div class="form-row"><div class="form-group"><label class="form-label">Dealer Name</label><input type="text" id="newShowroomDealerName" class="form-input" placeholder="Dealer / Contact Name"></div><div class="form-group"><label class="form-label">Mobile Number</label><input type="text" id="newShowroomMobile" class="form-input" placeholder="+91 00000 00000"></div></div><div class="form-row"><div class="form-group"><label class="form-label">RM Name</label><input type="text" id="newShowroomRM" class="form-input" placeholder="Assigned RM"></div><div class="form-group"><label class="form-label">Start Date</label><input type="date" id="newShowroomStart" class="form-input"></div></div></div><div class="modal-footer"><button class="btn btn-outline" data-modal="addShowroomModal">Cancel</button><button class="btn btn-primary" id="confirmAddShowroomBtn"><i class="fas fa-plus"></i>Create Showroom</button></div></div></div>
+<div id="addDealerModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="addDealerTitle"><div class="modal-container" style="max-width:560px"><div class="modal-header"><div class="modal-title" id="addDealerTitle">+ New Dealer</div><button class="modal-close" data-modal="addDealerModal">&times;</button></div><div class="modal-body"><div class="form-row"><div class="form-group"><label class="form-label">Dealer Name</label><input type="text" id="newDealerName" class="form-input" placeholder="Dealer / Business Name"></div><div class="form-group"><label class="form-label">Firm Name</label><input type="text" id="newDealerFirmName" class="form-input" placeholder="Registered Firm Name"></div></div><div class="form-row"><div class="form-group"><label class="form-label">City</label><input type="text" id="newDealerCity" class="form-input" placeholder="City"></div><div class="form-group"><label class="form-label">Mobile Number</label><input type="text" id="newDealerMobile" class="form-input" placeholder="+91 00000 00000"></div></div><div class="form-row"><div class="form-group"><label class="form-label">RM Name</label><input type="text" id="newDealerRM" class="form-input" placeholder="Assigned RM"></div><div class="form-group"><label class="form-label">Start Date</label><input type="date" id="newDealerStart" class="form-input"></div></div></div><div class="modal-footer"><button class="btn btn-outline" data-modal="addDealerModal">Cancel</button><button class="btn btn-primary" id="confirmAddDealerBtn"><i class="fas fa-plus"></i>Create Dealer</button></div></div></div>
+<div id="edit-showroom-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="editShowroomTitle"><div class="modal-container" style="max-width:560px"><div class="modal-header"><div class="modal-title" id="editShowroomTitle">Edit Showroom</div><button class="modal-close" data-modal="edit-showroom-modal">&times;</button></div><div class="modal-body"><div class="form-row"><div class="form-group"><label class="form-label">Name</label><input type="text" id="edit-showroom-name" class="form-input"></div><div class="form-group"><label class="form-label">City</label><input type="text" id="edit-showroom-city" class="form-input"></div></div><div class="form-row"><div class="form-group"><label class="form-label">Dealer Name</label><input type="text" id="edit-showroom-dealerName" class="form-input"></div><div class="form-group"><label class="form-label">Mobile Number</label><input type="text" id="edit-showroom-mobile" class="form-input"></div></div><div class="form-row"><div class="form-group"><label class="form-label">RM</label><input type="text" id="edit-showroom-rm" class="form-input"></div><div class="form-group"><label class="form-label">Start Date</label><input type="date" id="edit-showroom-start" class="form-input"></div></div></div><div class="modal-footer"><button class="btn btn-outline" data-modal="edit-showroom-modal">Cancel</button><button class="btn btn-primary" id="saveEditShowroomBtn">Save Changes</button></div></div></div>
+<div id="edit-dealer-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="editDealerTitle"><div class="modal-container" style="max-width:560px"><div class="modal-header"><div class="modal-title" id="editDealerTitle">Edit Dealer</div><button class="modal-close" data-modal="edit-dealer-modal">&times;</button></div><div class="modal-body"><div class="form-row"><div class="form-group"><label class="form-label">Name</label><input type="text" id="edit-dealer-name" class="form-input"></div><div class="form-group"><label class="form-label">Firm Name</label><input type="text" id="edit-dealer-firmName" class="form-input"></div></div><div class="form-row"><div class="form-group"><label class="form-label">City</label><input type="text" id="edit-dealer-city" class="form-input"></div><div class="form-group"><label class="form-label">Mobile Number</label><input type="text" id="edit-dealer-mobile" class="form-input"></div></div><div class="form-row"><div class="form-group"><label class="form-label">RM</label><input type="text" id="edit-dealer-rm" class="form-input"></div><div class="form-group"><label class="form-label">Start Date</label><input type="date" id="edit-dealer-start" class="form-input"></div></div></div><div class="modal-footer"><button class="btn btn-outline" data-modal="edit-dealer-modal">Cancel</button><button class="btn btn-primary" id="saveEditDealerBtn">Save Changes</button></div></div></div>
+<div id="rejectionReasonModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="rejectionTitle"><div class="modal-container" style="max-width:480px"><div class="modal-header"><div class="modal-title" id="rejectionTitle">Rejection Reason</div><button class="modal-close" data-modal="rejectionReasonModal">&times;</button></div><div class="modal-body"><div class="form-group"><label class="form-label">Reason for Rejection <span style="color:var(--red-500)">*</span></label><textarea id="rejectionReasonText" class="form-textarea" rows="4" placeholder="Provide the reason for rejecting this dealer…" style="resize:vertical;"></textarea></div></div><div class="modal-footer"><button class="btn btn-outline" data-modal="rejectionReasonModal">Cancel</button><button class="btn btn-danger" id="confirmRejectionBtn"><i class="fas fa-ban"></i>Confirm Rejection</button></div></div></div>
+<div id="confirmModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="confirmModalTitle"><div class="modal-container" style="max-width:460px"><div class="modal-header"><div class="modal-title" id="confirmModalTitle">Please Confirm</div><button class="modal-close" id="confirmModalClose">&times;</button></div><div class="modal-body"><p id="confirmModalMessage" style="font-size:0.9rem;color:var(--text-secondary)"></p></div><div class="modal-footer"><button class="btn btn-outline" id="confirmModalCancel">Cancel</button><button class="btn btn-primary" id="confirmModalOk">Confirm</button></div></div></div>
 <div id="toastContainer" class="toast-container"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <script type="module">
+/*
+  ⚠️  SECURITY REMINDER — DEPLOY THESE FIRESTORE RULES BEFORE GOING LIVE:
+  rules_version = '2';
+  service cloud.firestore {
+    match /databases/{database}/documents {
+      match /{document=**} {
+        allow read, write: if request.auth != null;
+      }
+    }
+  }
+  Without this, anyone with the API key can read/write all data.
+*/
+// FIXED: 14 added Firestore security rules reminder block above
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getFirestore, collection, doc, deleteDoc, onSnapshot, addDoc, updateDoc, getDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { getFirestore, collection, doc, deleteDoc, onSnapshot, addDoc, updateDoc, getDoc, serverTimestamp, arrayUnion } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = { apiKey:"AIzaSyDav3rI7fTr8KrXYxvnz5LB82CgjRq4v20", authDomain:"ais-showroom-dashboard.firebaseapp.com", projectId:"ais-showroom-dashboard", storageBucket:"ais-showroom-dashboard.firebasestorage.app", messagingSenderId:"175667492150", appId:"1:175667492150:web:cb124eb267b4689e6a2f97" };
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
+const firebase={firestore:{FieldValue:{serverTimestamp:()=>serverTimestamp(),arrayUnion:(...items)=>arrayUnion(...items)}}}; // FIXED: 5 server timestamp/array union compatibility helper
 
 const PHASES_CONFIG = [
   { id:'dim',name:'Dimensions Submission',days:5},{ id:'cad',name:'CAD Preparation',days:12},
@@ -437,6 +451,10 @@ let userRole=null,currentUserId=null,currentUserEmail=null,realtimeUnsubscribers
 let lastShowroomSnapshotTime=null,lastDealerSnapshotTime=null,firestoreConnected=true;
 let pendingRejectionDealerId=null,pendingRejectionStage=null;
 let notifications=[],previousShowroomState=[],previousDealerState=[];
+let toastQueue=[],visibleToastCount=0;
+let recentNotificationKeys=new Set();
+let confirmResolver=null;
+let hasLoadedFirstShowroomSnapshot=false,hasLoadedFirstDealerSnapshot=false,lastBackupClickAt=0;
 // PHASE 2: Dirty form tracking
 let isShowroomModalDirty=false;
 let showroomOriginalValues={};
@@ -461,13 +479,63 @@ function determineCurrentShowroomStage(s){
 }
 function showToast(m,t='info'){
   const colors={success:'#059669',error:'#DC2626',warning:'#D97706',info:'#2563EB'};
-  const c=document.getElementById('toastContainer'),el=document.createElement('div');
-  el.className='toast';el.style.borderLeft=`4px solid ${colors[t]||colors.info}`;
-  el.innerHTML=`<span class="toast-icon">${t==='success'?'✓':t==='error'?'✕':t==='warning'?'⚠':'ℹ'}</span>${esc(m)}`;
-  c.appendChild(el);setTimeout(()=>el.remove(),3600);
+  const c=document.getElementById('toastContainer');
+  if(!c)return;
+  const renderToast=()=>{
+    visibleToastCount++;
+    const el=document.createElement('div');
+    el.className='toast';el.style.borderLeft=`4px solid ${colors[t]||colors.info}`;
+    el.innerHTML=`<span class="toast-icon">${t==='success'?'✓':t==='error'?'✕':t==='warning'?'⚠':'ℹ'}</span>${esc(m)}`;
+    c.appendChild(el);
+    setTimeout(()=>{
+      el.remove();
+      visibleToastCount=Math.max(0,visibleToastCount-1);
+      if(toastQueue.length){const next=toastQueue.shift();next();}
+    },3600);
+  };
+  if(visibleToastCount>=3){toastQueue.push(renderToast);return;} // FIXED: 17 enforce max 3 visible toasts
+  renderToast();
 }
 function parseFirebaseError(e,f){const m={'auth/invalid-credential':'Invalid email or password.','auth/invalid-email':'Enter a valid email.','auth/missing-password':'Enter your password.','auth/too-many-requests':'Too many attempts.','permission-denied':'No permission.','unavailable':'Service unavailable.'};return m[e?.code]||f;}
 function debounce(fn,ms){let t;return function(...a){clearTimeout(t);t=setTimeout(()=>fn.apply(this,a),ms);};}
+
+function showConfirm(message,title='Please Confirm'){
+  return new Promise(resolve=>{
+    const modal=document.getElementById('confirmModal');
+    document.getElementById('confirmModalTitle').textContent=title;
+    document.getElementById('confirmModalMessage').textContent=message;
+    confirmResolver=resolve;
+    openModal('confirmModal');
+  });
+}
+function resolveConfirm(result){
+  if(confirmResolver){confirmResolver(result);confirmResolver=null;}
+  closeModal('confirmModal');
+}
+const externalScriptPromises={};
+function loadExternalScriptOnce(key,src){
+  if(externalScriptPromises[key])return externalScriptPromises[key];
+  externalScriptPromises[key]=new Promise((resolve,reject)=>{
+    const existing=document.querySelector(`script[data-ext="${key}"]`);
+    if(existing){resolve();return;}
+    const script=document.createElement('script');
+    script.src=src;script.async=true;script.dataset.ext=key;
+    script.onload=()=>resolve();
+    script.onerror=()=>reject(new Error(`Failed to load ${key}`));
+    document.head.appendChild(script);
+  });
+  return externalScriptPromises[key];
+}
+function ensureXlsx(){return loadExternalScriptOnce('xlsx','https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js');} // FIXED: 10 upgraded SheetJS CDN
+function ensureHtml2Canvas(){return loadExternalScriptOnce('html2canvas','https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js');}
+function ensureJsPdf(){return loadExternalScriptOnce('jspdf','https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js');}
+const debouncedRenderDashboard=debounce(()=>renderDashboard(),100);
+const debouncedRenderDealerView=debounce(()=>renderDealerView(),100);
+const debouncedSnapshotInsights=debounce(()=>{
+  if(currentView==='dashboard'){generateExecutiveBrief();detectAnomalies();renderAnomalyBanner();}
+  if(currentView==='analytics')renderAnalytics();
+},300); // FIXED: 6 debounce heavy insight/chart refreshes
+
 function docProgress(d){return Math.round((DOC_KEYS.filter(k=>d?.[k]).length/DOC_KEYS.length)*100);}
 function hasDuplicateShowroomName(n,ignoreId=null){return state.showrooms.some(s=>s.id!==ignoreId&&normName(s.name)===normName(n));}
 
@@ -485,10 +553,10 @@ function saveFilterState(){
     dealerFilterRM:document.getElementById('dealerFilterRM')?.value||'all',
     dealerSearch:document.getElementById('dealerSearch')?.value||''
   };
-  localStorage.setItem('ais_command_center_filters',JSON.stringify(fs));
+  localStorage.setItem(`ais_filters_v1_${currentUserId||'anonymous'}`,JSON.stringify(fs));
 }
 function loadFilterState(){
-  const saved=localStorage.getItem('ais_command_center_filters');
+  const saved=localStorage.getItem(`ais_filters_v1_${currentUserId||'anonymous'}`);
   if(!saved)return;
   try{
     const fs=JSON.parse(saved);
@@ -543,9 +611,9 @@ function trackDealerModalChanges(d){
     });
   });
 }
-function checkDirtyBeforeClose(modalId){
-  if(modalId==='showroomDetailModal'&&isShowroomModalDirty){if(!confirm('You have unsaved phase changes. Close anyway?'))return false;setShowroomDirty(false);}
-  if(modalId==='dealerDetailModal'&&isDealerModalDirty){if(!confirm('You have unsaved document changes. Close anyway?'))return false;setDealerDirty(false);}
+async function checkDirtyBeforeClose(modalId){
+  if(modalId==='showroomDetailModal'&&isShowroomModalDirty){if(!(await showConfirm('You have unsaved phase changes. Close anyway?','Unsaved Showroom Changes')))return false;setShowroomDirty(false);}
+  if(modalId==='dealerDetailModal'&&isDealerModalDirty){if(!(await showConfirm('You have unsaved document changes. Close anyway?','Unsaved Dealer Changes')))return false;setDealerDirty(false);}
   return true;
 }
 
@@ -566,14 +634,25 @@ function renderNotifications(){
   l.querySelectorAll('.notif-item').forEach(it=>{it.addEventListener('click',()=>{const nid=parseFloat(it.getAttribute('data-id'));const n=notifications.find(x=>x.id===nid);if(n)navigateToNotification(n);});});
 }
 function checkAndNotify(){
-  state.showrooms.forEach(s=>{const p=previousShowroomState.find(x=>x.id===s.id);const st=calcShowroomStats(s);const ps=p?calcShowroomStats(p):null;if(!p)return;if(st.maxDelay>=stageConfig.showroom.criticalDelay&&(!ps||ps.maxDelay<stageConfig.showroom.criticalDelay)&&!isCompleted(s,'showroom'))addNotification(`${s.name} is now critical`,`${st.maxDelay}d delay`,'critical','showroom',s.id);if(isCompleted(s,'showroom')&&!isCompleted(p,'showroom'))addNotification(`${s.name} completed`,'Showroom launched','ok','showroom',s.id);});
-  state.dealers.forEach(d=>{const p=previousDealerState.find(x=>x.id===d.id);const tl=calcDealerTimeline(d);const pt=p?calcDealerTimeline(p):null;if(!p)return;if(tl.level==='critical'&&(!pt||pt.level!=='critical')&&!isRejectedDealer(d)&&!isCompleted(d,'dealer'))addNotification(`${d.name} critically delayed`,`${tl.delayDays}d behind`,'critical','dealer',d.id);if(isRejectedDealer(d)&&!isRejectedDealer(p))addNotification(`${d.name} rejected`,`Status:${d.currentStage}`,'warning','dealer',d.id);if(isCompleted(d,'dealer')&&!isCompleted(p,'dealer'))addNotification(`${d.name} onboarded`,'Onboarding complete','ok','dealer',d.id);const dp=docProgress(d.documents);const pdp=docProgress(p.documents);if(dp===100&&pdp<100&&!isRejectedDealer(d)&&!isCompleted(d,'dealer'))addNotification(`${d.name} docs complete`,'All documents submitted','ok','dealer',d.id);});
+  const notifyOnce=(entity,notifType,currentStage,title,desc,severity,entityType)=>{
+    const key=`${entity.id}-${notifType}-${currentStage||'na'}`;
+    if(recentNotificationKeys.has(key))return;
+    recentNotificationKeys.add(key);
+    addNotification(title,desc,severity,entityType,entity.id);
+  }; // FIXED: 7 notification dedup per entity/type/stage
+  state.showrooms.forEach(s=>{const p=previousShowroomState.find(x=>x.id===s.id);const st=calcShowroomStats(s);const ps=p?calcShowroomStats(p):null;if(!p)return;if(st.maxDelay>=stageConfig.showroom.criticalDelay&&(!ps||ps.maxDelay<stageConfig.showroom.criticalDelay)&&!isCompleted(s,'showroom'))notifyOnce(s,'critical-delay',determineCurrentShowroomStage(s).stage?.id,`${s.name} is now critical`,`${st.maxDelay}d delay`,'critical','showroom');if(isCompleted(s,'showroom')&&!isCompleted(p,'showroom'))notifyOnce(s,'completed','launched',`${s.name} completed`,'Showroom launched','ok','showroom');});
+  state.dealers.forEach(d=>{const p=previousDealerState.find(x=>x.id===d.id);const tl=calcDealerTimeline(d);const pt=p?calcDealerTimeline(p):null;if(!p)return;if(tl.level==='critical'&&(!pt||pt.level!=='critical')&&!isRejectedDealer(d)&&!isCompleted(d,'dealer'))notifyOnce(d,'critical-delay',d.currentStage,`${d.name} critically delayed`,`${tl.delayDays}d behind`,'critical','dealer');if(isRejectedDealer(d)&&!isRejectedDealer(p))notifyOnce(d,'rejected',d.currentStage,`${d.name} rejected`,`Status:${d.currentStage}`,'warning','dealer');if(isCompleted(d,'dealer')&&!isCompleted(p,'dealer'))notifyOnce(d,'onboarded',d.currentStage,`${d.name} onboarded`,'Onboarding complete','ok','dealer');const dp=docProgress(d.documents);const pdp=docProgress(p.documents);if(dp===100&&pdp<100&&!isRejectedDealer(d)&&!isCompleted(d,'dealer'))notifyOnce(d,'docs-complete',d.currentStage,`${d.name} docs complete`,'All documents submitted','ok','dealer');});
   previousShowroomState=JSON.parse(JSON.stringify(state.showrooms));previousDealerState=JSON.parse(JSON.stringify(state.dealers));
 }
+function showSkeletons(containerId,count=6){
+  const c=document.getElementById(containerId);
+  if(!c)return;
+  c.innerHTML=Array(count).fill(`<div class="entity-card" style="min-height:200px"><div class="skeleton" style="height:100%;border-radius:var(--r-lg)"></div></div>`).join('');
+} // FIXED: 12 pre-snapshot skeleton loader
 
 function generateSmartAction(e,ty){
   if(ty==='showroom'){const st=calcShowroomStats(e);if(isCompleted(e,'showroom'))return'Showroom completed';if(st.delayedPhases.length===0)return'All phases on track';const w=st.delayedPhases[0];if(w.phase.includes('CAD'))return`CAD delayed ${w.days}d — expedite design`;if(w.phase.includes('Civil'))return`Civil work stalled — inspect site`;if(w.phase.includes('Interior'))return`Interior behind ${w.days}d — coordinate`;if(w.phase.includes('Brand'))return`Branding delayed ${w.days}d — review vendors`;if(w.phase.includes('Window')||w.phase.includes('Delivery'))return`Delivery/install delayed — check supply`;return`${w.phase} behind ${w.days}d — escalate`;}
-  if(isCompleted(e,'dealer'))return'Dealer fully onboarded';if(isRejectedDealer(e))return'Dealer rejected';const m=DOC_KEYS.filter(k=>!e.documents?.[k]).length;const tl=calcDealerTimeline(e);if(m>0)return`${m} doc${m>1?'s':''} pending — follow up`;if(tl.delayDays>0)return`Stuck in ${e.currentStage} ${tl.delayDays}d — expedite`;if(docProgress(e.documents)===100&&e.currentStage!=='Onboarded')return'All docs complete — advance stage';return`Progressing — continue monitoring`;}
+  if(isCompleted(e,'dealer'))return'Dealer fully onboarded';if(isRejectedDealer(e))return'Dealer rejected';const m=DOC_KEYS.filter(k=>!e.documents?.[k]).length;const tl=calcDealerTimeline(e);const st=e.currentStage||'Interested';if(st==='Interested')return m>0?`Qualify lead and request first ${Math.min(m,3)} docs`:'Move to shortlist after intent confirmation';if(st==='Shortlisted')return m>0?`Collect KYC set (${m} pending) and schedule CFT review`:'Run CFT decision and finalize shortlist';if(st==='CFT Selected')return m>0?`Push documentation closure (${m} pending)`:'Initiate documentation packet immediately';if(st==='Documentation')return m>0?`Chase missing docs (${m}) and validate compliance`:'All docs done — onboard dealer now';if(tl.delayDays>0)return`Stuck in ${st} ${tl.delayDays}d — escalate with RM`;if(docProgress(e.documents)===100&&e.currentStage!=='Onboarded')return'All docs complete — advance stage';return`Progressing — continue monitoring`;}
 function detectAnomalies(){const a=[];const sr=getActiveShowrooms();if(sr.length>=2){const pd={};sr.forEach(s=>{const st=calcShowroomStats(s);st.delayedPhases.forEach(dp=>{if(!pd[dp.phase])pd[dp.phase]=[];pd[dp.phase].push(dp.days);});});Object.entries(pd).forEach(([ph,ds])=>{const ad=avg(ds);if(ad>0)sr.forEach(s=>{const st=calcShowroomStats(s);const dp=st.delayedPhases.find(p=>p.phase===ph);if(dp&&dp.days>ad*2&&dp.days>5)a.push({entity:s,type:'showroom',phase:ph,days:dp.days,avg:ad});});});}
   getActiveDealers().forEach(d=>{const tl=calcDealerTimeline(d);const tgt=DEALER_STAGE_TARGETS[d.currentStage]||0;if(tgt>0&&tl.daysElapsed>tgt*2&&tl.daysElapsed>5)a.push({entity:d,type:'dealer',stage:d.currentStage,elapsed:tl.daysElapsed,target:tgt});});
   const seen=new Set();return a.filter(x=>{const k=`${x.type}-${x.entity.id}`;if(seen.has(k))return!1;seen.add(k);return!0;});}
@@ -640,7 +719,8 @@ function calcShowroomStats(s){
 function calcShowroomDayMetrics(s){
   const idealDays=SHOWROOM_IDEAL_DAYS;if(!s||!s.startDate)return{idealDays,actualDays:0,forecastDays:idealDays,delayDays:0};
   const start=new Date(s.startDate),today=new Date();
-  if(isCompleted(s,'showroom')){const ld=s.data?.launch?.actualDate?new Date(s.data.launch.actualDate):today;const actualDays=Math.max(0,Math.floor((ld-start)/86400000));return{idealDays,actualDays,forecastDays:actualDays,delayDays:Math.max(0,actualDays-idealDays)};}
+  if(s.data?.launch?.actualDate){const ld=new Date(s.data.launch.actualDate);const actualDays=Math.max(0,Math.floor((ld-start)/86400000));return{idealDays,actualDays,forecastDays:actualDays,delayDays:Math.max(0,actualDays-idealDays)};} // FIXED: 2 completed showroom actualDays freeze to launch date
+  if(isCompleted(s,'showroom')){const cd=s.completedAt?new Date(s.completedAt):new Date();const actualDays=Math.max(0,Math.floor((cd-start)/86400000));return{idealDays,actualDays,forecastDays:actualDays,delayDays:Math.max(0,actualDays-idealDays)};}
   const actualDays=Math.max(0,Math.floor((today-start)/86400000));const st=calcShowroomStats(s);const pct=st.pct;
   let forecastDays;if(pct>=100)forecastDays=actualDays;else if(pct>0&&actualDays>0)forecastDays=Math.round(actualDays/(pct/100));else forecastDays=idealDays;
   return{idealDays,actualDays,forecastDays,delayDays:Math.max(0,actualDays-idealDays)};
@@ -657,7 +737,8 @@ function calcDealerTimeline(d){
 function calcDealerDayMetrics(d){
   const idealDays=DEALER_IDEAL_DAYS;if(!d||!d.startDate)return{idealDays,actualDays:0,forecastDays:idealDays,delayDays:0};
   const start=new Date(d.startDate);
-  if(isCompleted(d,'dealer')){const od=d.stageLog?.Onboarded?new Date(d.stageLog.Onboarded):new Date();const actualDays=Math.max(0,Math.floor((od-start)/86400000));return{idealDays,actualDays,forecastDays:actualDays,delayDays:Math.max(0,actualDays-idealDays)};}
+  if(d.currentStage==='Onboarded'&&d.completedAt){const cd=new Date(d.completedAt);const actualDays=Math.max(0,Math.floor((cd-start)/86400000));return{idealDays,actualDays,forecastDays:actualDays,delayDays:Math.max(0,actualDays-idealDays)};} // FIXED: 3 onboarded dealer actualDays freeze to completedAt
+  if(isCompleted(d,'dealer')){const cd=d.completedAt?new Date(d.completedAt):(d.stageLog?.Onboarded?new Date(d.stageLog.Onboarded):new Date());const actualDays=Math.max(0,Math.floor((cd-start)/86400000));return{idealDays,actualDays,forecastDays:actualDays,delayDays:Math.max(0,actualDays-idealDays)};}
   if(isRejectedDealer(d)){const rd=d.rejectedAt?new Date(d.rejectedAt):new Date();const actualDays=Math.max(0,Math.floor((rd-start)/86400000));return{idealDays,actualDays,forecastDays:actualDays,delayDays:Math.max(0,actualDays-idealDays)};}
   const actualDays=Math.max(0,Math.floor((new Date()-start)/86400000));const si=Math.max(0,DEALER_STAGES.indexOf(d.currentStage||'Interested'));const progress=(si+1)/DEALER_STAGES.length;
   let forecastDays;if(progress>0&&actualDays>0)forecastDays=Math.round(actualDays/progress);else forecastDays=idealDays;
@@ -731,7 +812,7 @@ function renderShowroomCards(filtered){
   document.getElementById('showroomCount').textContent=`${filtered.length} of ${state.showrooms.length}`;
   const grid=document.getElementById('showroomGrid');
   if(isLoading){grid.innerHTML=Array(4).fill(0).map(()=>`<div class="entity-card skeleton" style="height:320px;"></div>`).join('');return;}
-  if(!state.showrooms.length){grid.innerHTML=`<div class="empty-state"><div class="empty-icon">🏗️</div><div class="empty-title">No showrooms yet</div><div class="empty-sub">Start by adding your first showroom.</div>${isAdmin()?`<button class="btn btn-primary" id="emptyAddShowroomBtn"><i class="fas fa-plus"></i>Add Showroom</button>`:''}</div>`;const eb=document.getElementById('emptyAddShowroomBtn');if(eb)eb.onclick=()=>document.getElementById('addShowroomModal').style.display='flex';return;}
+  if(!state.showrooms.length){grid.innerHTML=`<div class="empty-state"><div class="empty-icon">🏗️</div><div class="empty-title">No showrooms yet</div><div class="empty-sub">Start by adding your first showroom.</div>${isAdmin()?`<button class="btn btn-primary" id="emptyAddShowroomBtn"><i class="fas fa-plus"></i>Add Showroom</button>`:''}</div>`;const eb=document.getElementById('emptyAddShowroomBtn');if(eb)eb.onclick=()=>openModal('addShowroomModal');return;}
   if(!filtered.length){grid.innerHTML=`<div class="empty-state"><div class="empty-icon">🔍</div><div class="empty-title">No results</div><div class="empty-sub">Adjust filters.</div><button class="btn btn-outline" id="emptyResetFiltersBtn"><i class="fas fa-rotate-left"></i>Clear</button></div>`;document.getElementById('emptyResetFiltersBtn')?.addEventListener('click',resetFilters);return;}
   if(groupByStage){
     const groups={};filtered.forEach(s=>{const si=determineCurrentShowroomStage(s);const key=isCompleted(s,'showroom')?'completed':(si.stage?.id||'not-started');if(!groups[key])groups[key]={name:isCompleted(s,'showroom')?'Completed':(si.name||'Not Started'),stageId:key,entities:[],icon:isCompleted(s,'showroom')?'fa-circle-check':(si.stage?.icon||'fa-circle')};groups[key].entities.push(s);});
@@ -743,7 +824,7 @@ function renderShowroomCards(filtered){
 function renderDealerCards(filtered){
   document.getElementById('dealerCount').textContent=`${filtered.length} of ${state.dealers.length}`;
   const grid=document.getElementById('dealerGrid');
-  if(!state.dealers.length){grid.innerHTML=`<div class="empty-state"><div class="empty-icon">👥</div><div class="empty-title">No dealers yet</div><div class="empty-sub">Start by adding your first dealer.</div>${isAdmin()?`<button class="btn btn-primary" id="emptyAddDealerBtn"><i class="fas fa-plus"></i>Add Dealer</button>`:''}</div>`;const eb=document.getElementById('emptyAddDealerBtn');if(eb)eb.onclick=()=>document.getElementById('addDealerModal').style.display='flex';return;}
+  if(!state.dealers.length){grid.innerHTML=`<div class="empty-state"><div class="empty-icon">👥</div><div class="empty-title">No dealers yet</div><div class="empty-sub">Start by adding your first dealer.</div>${isAdmin()?`<button class="btn btn-primary" id="emptyAddDealerBtn"><i class="fas fa-plus"></i>Add Dealer</button>`:''}</div>`;const eb=document.getElementById('emptyAddDealerBtn');if(eb)eb.onclick=()=>openModal('addDealerModal');return;}
   if(!filtered.length){grid.innerHTML=`<div class="empty-state"><div class="empty-icon">🔍</div><div class="empty-title">No results</div><div class="empty-sub">Adjust filters.</div><button class="btn btn-outline" id="emptyResetDealerFiltersBtn"><i class="fas fa-rotate-left"></i>Clear</button></div>`;document.getElementById('emptyResetDealerFiltersBtn')?.addEventListener('click',resetDealerFilters);return;}
   grid.innerHTML=filtered.map(d=>buildDealerCard(d)).join('');
   document.querySelectorAll('.view-dealer-detail').forEach(b=>{b.addEventListener('click',()=>openDealerDetail(b.getAttribute('data-id')));});
@@ -755,8 +836,8 @@ function populateDealerStageFilter(){const s=document.getElementById('dealerFilt
 function populateShowroomStageFilter(){const s=document.getElementById('filterShowroomStage');if(!s)return;const cv=s.value;s.innerHTML='<option value="all">All Stages</option>'+SHOWROOM_STAGE_CATEGORIES.map(sc=>`<option value="${sc.id}" ${cv===sc.id?'selected':''}>${sc.name}</option>`).join('')+'<option value="completed">Completed</option>';}
 function updateNavBadges(){const csr=state.showrooms.filter(s=>{if(isCompleted(s,'showroom'))return!1;return calcShowroomStats(s).maxDelay>=stageConfig.showroom.criticalDelay;}).length;const cdl=state.dealers.filter(d=>{if(isCompleted(d,'dealer')||isRejectedDealer(d))return!1;return calcDealerTimeline(d).level==='critical';}).length;const sb=document.getElementById('navBadgeShowrooms'),db=document.getElementById('navBadgeDealers');if(sb){sb.textContent=csr;sb.style.display=csr?'inline':'none';}if(db){db.textContent=cdl;db.style.display=cdl?'inline':'none';}const sa=document.getElementById('sidebarAlert'),sat=document.getElementById('sidebarAlertText');if(sa){if(csr+cdl>0){sa.classList.add('visible');sat.textContent=`${csr} SR, ${cdl} DL at risk`;}else{sa.classList.remove('visible');}}updateNotifBadge();}
 
-function renderDashboard(){updateNavBadges();const f=getFilteredShowrooms();generateExecutiveBrief();renderShowroomKpis(f);renderTopDelayReasons('showroom');renderShowroomAlertBanner(f);renderAnomalyBanner();populateRMFilter('filterRM',state.showrooms.map(s=>s.rm));populateShowroomStageFilter();renderShowroomCards(f);saveFilterState();}
-function renderDealerView(){updateNavBadges();const f=getFilteredDealers();renderDealerKpis(f);renderTopDelayReasons('dealer');renderDealerAlertBanner(f);populateRMFilter('dealerFilterRM',state.dealers.map(d=>d.rm),document.getElementById('dealerFilterRM')?.value);renderDealerCards(f);saveFilterState();}
+function renderDashboard(){recentNotificationKeys.clear();updateNavBadges();const f=getFilteredShowrooms();generateExecutiveBrief();renderShowroomKpis(f);renderTopDelayReasons('showroom');renderShowroomAlertBanner(f);renderAnomalyBanner();populateRMFilter('filterRM',state.showrooms.map(s=>s.rm));populateShowroomStageFilter();renderShowroomCards(f);saveFilterState();} // FIXED: 7 clear dedup keys on full render cycle
+function renderDealerView(){recentNotificationKeys.clear();updateNavBadges();const f=getFilteredDealers();renderDealerKpis(f);renderTopDelayReasons('dealer');renderDealerAlertBanner(f);populateRMFilter('dealerFilterRM',state.dealers.map(d=>d.rm),document.getElementById('dealerFilterRM')?.value);renderDealerCards(f);saveFilterState();} // FIXED: 7 clear dedup keys on full render cycle
 
 async function renderAnalytics(){
   const asr=getActiveShowrooms().length,csr=state.showrooms.filter(s=>isCompleted(s,'showroom')).length;
@@ -784,25 +865,30 @@ async function renderAnalytics(){
   if(charts.delayPie)charts.delayPie.destroy();charts.delayPie=new Chart(document.getElementById('delayPieChart').getContext('2d'),{type:'doughnut',data:{labels:phaseLabels,datasets:[{data:phaseTotalDelays.map(v=>v||0.1),backgroundColor:['#93C5FD','#60A5FA','#3B82F6','#F59E0B','#F97316','#EF4444','#EC4899','#8B5CF6','#10B981']}]},options:{responsive:!0,plugins:{legend:{position:'right',labels:{font:{size:11}}}},cutout:'55%'}});
 }
 
-function setActiveNav(id){document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));const el=document.getElementById(id);if(el)el.classList.add('active');}
-function showDashboard(){currentView='dashboard';setActiveNav('nav-dashboard');document.getElementById('pageTitle').textContent='Showrooms';document.getElementById('pageBreadcrumb').textContent='Showroom Execution';document.getElementById('addEntityBtn').innerHTML='<i class="fas fa-plus"></i>Add Showroom';document.getElementById('addEntityBtn').style.display=isAdmin()?'inline-flex':'none';document.getElementById('dashboardView').style.display='block';document.getElementById('analyticsView').style.display='none';document.getElementById('dealerView').style.display='none';renderDashboard();}
-function showAnalytics(){currentView='analytics';setActiveNav('nav-analytics');document.getElementById('pageTitle').textContent='Analytics';document.getElementById('pageBreadcrumb').textContent='Performance Intelligence';document.getElementById('addEntityBtn').style.display='none';document.getElementById('dashboardView').style.display='none';document.getElementById('analyticsView').style.display='block';document.getElementById('dealerView').style.display='none';renderAnalytics();}
-function openDealerModule(){currentView='dealer';setActiveNav('nav-dealers');document.getElementById('pageTitle').textContent='Dealers';document.getElementById('pageBreadcrumb').textContent='Dealer Onboarding';document.getElementById('addEntityBtn').innerHTML='<i class="fas fa-plus"></i>Add Dealer';document.getElementById('addEntityBtn').style.display=isAdmin()?'inline-flex':'none';document.getElementById('dashboardView').style.display='none';document.getElementById('analyticsView').style.display='none';document.getElementById('dealerView').style.display='block';populateDealerStageFilter();renderDealerView();}
+function setActiveNav(id){document.querySelectorAll('.nav-item').forEach(n=>{n.classList.remove('active');n.setAttribute('aria-current','false');});const el=document.getElementById(id);if(el){el.classList.add('active');el.setAttribute('aria-current','page');}} // FIXED: 11 aria-current on active nav
+function showDashboard(){currentView='dashboard';document.title='Showrooms — AIS Command Center';setActiveNav('nav-dashboard');document.getElementById('pageTitle').textContent='Showrooms';document.getElementById('pageBreadcrumb').textContent='Showroom Execution';document.getElementById('addEntityBtn').innerHTML='<i class="fas fa-plus"></i>Add Showroom';document.getElementById('addEntityBtn').style.display=isAdmin()?'inline-flex':'none';document.getElementById('dashboardView').style.display='block';document.getElementById('analyticsView').style.display='none';document.getElementById('dealerView').style.display='none';renderDashboard();} // FIXED: 16 view title update
+function showAnalytics(){currentView='analytics';document.title='Analytics — AIS Command Center';setActiveNav('nav-analytics');document.getElementById('pageTitle').textContent='Analytics';document.getElementById('pageBreadcrumb').textContent='Performance Intelligence';document.getElementById('addEntityBtn').style.display='none';document.getElementById('dashboardView').style.display='none';document.getElementById('analyticsView').style.display='block';document.getElementById('dealerView').style.display='none';renderAnalytics();} // FIXED: 16 view title update
+function openDealerModule(){currentView='dealer';document.title='Dealers — AIS Command Center';setActiveNav('nav-dealers');document.getElementById('pageTitle').textContent='Dealers';document.getElementById('pageBreadcrumb').textContent='Dealer Onboarding';document.getElementById('addEntityBtn').innerHTML='<i class="fas fa-plus"></i>Add Dealer';document.getElementById('addEntityBtn').style.display=isAdmin()?'inline-flex':'none';document.getElementById('dashboardView').style.display='none';document.getElementById('analyticsView').style.display='none';document.getElementById('dealerView').style.display='block';populateDealerStageFilter();renderDealerView();} // FIXED: 16 view title update
 function toggleSort(){sortByDelay=!sortByDelay;document.getElementById('sortBtn').innerHTML=`<i class="fas fa-sort"></i>Sort: ${sortByDelay?'Delay':'Name'}`;renderDashboard();}
 function toggleGroupByStage(){groupByStage=!groupByStage;document.getElementById('groupToggleBtn').innerHTML=groupByStage?'<i class="fas fa-list"></i>Flat View':'<i class="fas fa-layer-group"></i>Group by Stage';renderDashboard();}
 function resetFilters(){document.getElementById('globalSearch').value='';document.getElementById('filterRM').value='all';document.getElementById('filterShowroomStage').value='all';renderDashboard();}
 function resetDealerFilters(){['dealerFilterStatus','dealerFilterStage','dealerFilterRM'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='all';});document.getElementById('dealerSearch').value='';renderDealerView();}
-function closeModal(id){const el=document.getElementById(id);if(el)el.style.display='none';}
-function openAddShowroomModal(){document.getElementById('addShowroomModal').style.display='flex';}
-function openAddDealerModal(){document.getElementById('addDealerModal').style.display='flex';}
+function resetModalForm(id){const el=document.getElementById(id);if(!el)return;el.querySelectorAll('input,textarea,select').forEach(inp=>{if(inp.type==='checkbox'||inp.type==='radio')inp.checked=false;else if(inp.tagName==='SELECT')inp.selectedIndex=0;else inp.value='';inp.classList.remove('input-error');});}
+function closeModal(id){const el=document.getElementById(id);if(el){el.style.display='none';el.classList.remove('show-flex');}if(id==='rejectionReasonModal'){pendingRejectionDealerId=null;pendingRejectionStage=null;}if(id!=='showroomDetailModal'&&id!=='dealerDetailModal'&&id!=='confirmModal')resetModalForm(id);} // FIXED: 8 unified modal close pattern
+function openModal(id){const el=document.getElementById(id);if(el){el.style.display='flex';el.classList.add('show-flex');}} // FIXED: 8 unified modal open pattern
+function openAddShowroomModal(){openModal('addShowroomModal');}
+function openAddDealerModal(){openModal('addDealerModal');}
 
-function exportShowroomsExcel(){try{const wb=XLSX.utils.book_new();const sd=state.showrooms.map(s=>{const st=calcShowroomStats(s);const d=calcShowroomDayMetrics(s);return{'Showroom':s.name,'City':s.city,'Dealer':s.dealerName||'','Mobile':s.mobileNumber||'','RM':s.rm,'Start':s.startDate,'Completion %':st.pct,'Ideal Days':d.idealDays,'Actual':d.actualDays,'Forecast':d.forecastDays,'Max Delay':st.maxDelay,'Status':isCompleted(s,'showroom')?'Completed':st.maxDelay>=stageConfig.showroom.criticalDelay?'Critical':st.maxDelay>0?'Delayed':'On Track'};});XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(sd),'Showrooms');const pd=[];state.showrooms.forEach(s=>{const st=calcShowroomStats(s);st.delayedPhases.forEach(dp=>{pd.push({'Showroom':s.name,'Phase':dp.phase,'Delay':dp.days});});});XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(pd),'Phase Delays');XLSX.writeFile(wb,`Showrooms_${new Date().toISOString().slice(0,10)}.xlsx`);showToast('Exported','success');}catch(e){showToast('Failed','error');}}
-function exportDealersExcel(){try{const wb=XLSX.utils.book_new();const dd=state.dealers.map(d=>{const tl=calcDealerTimeline(d);const dm=calcDealerDayMetrics(d);return{'Dealer':d.name,'Firm':d.firmName||'','City':d.city,'Mobile':d.mobileNumber||'','RM':d.rm,'Start':d.startDate,'Stage':d.currentStage,'Status':d.status,'Doc %':docProgress(d.documents),'Ideal':dm.idealDays,'Actual':dm.actualDays,'Forecast':dm.forecastDays,'Delay':tl.delayDays,'Risk':tl.level,'Rejection':d.rejectionReason||''};});XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(dd),'Dealers');XLSX.writeFile(wb,`Dealers_${new Date().toISOString().slice(0,10)}.xlsx`);showToast('Exported','success');}catch(e){showToast('Failed','error');}}
-function exportExecutiveReport(){try{const wb=XLSX.utils.book_new();const sm=calculateShowroomMetrics(state.showrooms),dm=calculateDealerMetrics(state.dealers);const sum=[{Metric:'Active SR',Value:sm.total},{Metric:'Completed SR',Value:sm.completed},{Metric:'Critical SR',Value:sm.critical},{Metric:'Active DL',Value:dm.total},{Metric:'Completed DL',Value:dm.completed},{Metric:'Dropped DL',Value:dm.dropped}];XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(sum),'Summary');const sd=state.showrooms.map(s=>{const st=calcShowroomStats(s);return{'Showroom':s.name,'City':s.city,'Dealer':s.dealerName||'','Mobile':s.mobileNumber||'','RM':s.rm,'Completion':st.pct,'Status':isCompleted(s,'showroom')?'Completed':st.maxDelay>=stageConfig.showroom.criticalDelay?'Critical':'Active'};});XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(sd),'Showrooms');const dd=state.dealers.map(d=>{return{'Dealer':d.name,'Firm':d.firmName||'','City':d.city,'Mobile':d.mobileNumber||'','RM':d.rm,'Stage':d.currentStage,'Status':d.status,'Rejection':d.rejectionReason||''};});XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(dd),'Dealers');XLSX.writeFile(wb,`Executive_${new Date().toISOString().slice(0,10)}.xlsx`);showToast('Executive report exported','success');}catch(e){showToast('Failed','error');}}
+async function exportShowroomsExcel(){if(!(await showConfirm('Export showroom data to Excel?','Confirm Export')))return;try{await ensureXlsx();const wb=XLSX.utils.book_new();const sd=state.showrooms.map(s=>{const st=calcShowroomStats(s);const d=calcShowroomDayMetrics(s);return{'Showroom':s.name,'City':s.city,'Dealer':s.dealerName||'','Mobile':s.mobileNumber||'','RM':s.rm,'Start':s.startDate,'Completion %':st.pct,'Ideal Days':d.idealDays,'Actual':d.actualDays,'Forecast':d.forecastDays,'Max Delay':st.maxDelay,'Status':isCompleted(s,'showroom')?'Completed':st.maxDelay>=stageConfig.showroom.criticalDelay?'Critical':st.maxDelay>0?'Delayed':'On Track'};});XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(sd),'Showrooms');const pd=[];state.showrooms.forEach(s=>{const st=calcShowroomStats(s);st.delayedPhases.forEach(dp=>{pd.push({'Showroom':s.name,'Phase':dp.phase,'Delay':dp.days});});});XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(pd),'Phase Delays');XLSX.writeFile(wb,`Showrooms_${new Date().toISOString().slice(0,10)}.xlsx`);showToast('Exported','success');}catch(e){showToast('Failed','error');}}
+async function exportDealersExcel(){if(!(await showConfirm('Export dealer data to Excel?','Confirm Export')))return;try{await ensureXlsx();const wb=XLSX.utils.book_new();const dd=state.dealers.map(d=>{const tl=calcDealerTimeline(d);const dm=calcDealerDayMetrics(d);return{'Dealer':d.name,'Firm':d.firmName||'','City':d.city,'Mobile':d.mobileNumber||'','RM':d.rm,'Start':d.startDate,'Stage':d.currentStage,'Status':d.status,'Doc %':docProgress(d.documents),'Ideal':dm.idealDays,'Actual':dm.actualDays,'Forecast':dm.forecastDays,'Delay':tl.delayDays,'Risk':tl.level,'Rejection':d.rejectionReason||''};});XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(dd),'Dealers');XLSX.writeFile(wb,`Dealers_${new Date().toISOString().slice(0,10)}.xlsx`);showToast('Exported','success');}catch(e){showToast('Failed','error');}}
+async function exportExecutiveReport(){if(!(await showConfirm('Export executive report to Excel?','Confirm Export')))return;try{await ensureXlsx();const wb=XLSX.utils.book_new();const sm=calculateShowroomMetrics(state.showrooms),dm=calculateDealerMetrics(state.dealers);const sum=[{Metric:'Active SR',Value:sm.total},{Metric:'Completed SR',Value:sm.completed},{Metric:'Critical SR',Value:sm.critical},{Metric:'Active DL',Value:dm.total},{Metric:'Completed DL',Value:dm.completed},{Metric:'Dropped DL',Value:dm.dropped}];XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(sum),'Summary');const sd=state.showrooms.map(s=>{const st=calcShowroomStats(s);return{'Showroom':s.name,'City':s.city,'Dealer':s.dealerName||'','Mobile':s.mobileNumber||'','RM':s.rm,'Completion':st.pct,'Status':isCompleted(s,'showroom')?'Completed':st.maxDelay>=stageConfig.showroom.criticalDelay?'Critical':'Active'};});XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(sd),'Showrooms');const dd=state.dealers.map(d=>{return{'Dealer':d.name,'Firm':d.firmName||'','City':d.city,'Mobile':d.mobileNumber||'','RM':d.rm,'Stage':d.currentStage,'Status':d.status,'Rejection':d.rejectionReason||''};});XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(dd),'Dealers');XLSX.writeFile(wb,`Executive_${new Date().toISOString().slice(0,10)}.xlsx`);showToast('Executive report exported','success');}catch(e){showToast('Failed','error');}}
 
 // ========== PHASE 5: Multi-Page PDF Export Fix ==========
 async function exportExecutivePackPDF(){
+  if(!(await showConfirm('Generate and download Executive Pack PDF?','Confirm Export')))return;
   try{
+    await ensureHtml2Canvas();
+    await ensureJsPdf();
     showToast('Generating PDF...','info');
     const {jsPDF}=window.jspdf;
     const captureEl=document.createElement('div');
@@ -853,11 +939,26 @@ async function exportExecutivePackPDF(){
     showToast(`PDF exported (${pageNum} pages)`,'success');
   }catch(e){showToast('PDF generation failed','error');}
 }
-function backupData(){try{const b={showrooms:state.showrooms,dealers:state.dealers,exportedAt:new Date().toISOString(),version:'4.4'};const a=Object.assign(document.createElement('a'),{href:URL.createObjectURL(new Blob([JSON.stringify(b,null,2)],{type:'application/json'})),download:`ais_backup_${new Date().toISOString().slice(0,19).replace(/:/g,'-')}.json`});a.click();showToast('Backup downloaded','success');}catch(e){showToast('Failed','error');}}
+async function backupData(){
+  const now=Date.now();
+  if(now-lastBackupClickAt<5000){showToast('Please wait before running backup again','warning');return;}
+  lastBackupClickAt=now;
+  const backupBtn=document.getElementById('backupDataBtn');
+  showToast('Preparing backup...','info'); // FIXED: 9 immediate backup preparation feedback
+  if(!(await showConfirm('Download full JSON backup now?','Confirm Backup')))return;
+  try{
+    if(backupBtn)backupBtn.disabled=true;
+    const b={showrooms:state.showrooms,dealers:state.dealers,exportedAt:new Date().toISOString(),version:'4.4'};
+    const a=Object.assign(document.createElement('a'),{href:URL.createObjectURL(new Blob([JSON.stringify(b,null,2)],{type:'application/json'})),download:`ais_backup_${new Date().toISOString().slice(0,19).replace(/:/g,'-')}.json`});
+    a.click();
+    showToast('Backup downloaded','success');
+  }catch(e){showToast('Failed','error');}
+  finally{if(backupBtn)backupBtn.disabled=false;}
+} // FIXED: 9 5s rate limit + disable button while exporting
 
 function initRealtime(){cleanupListeners();isLoading=!0;renderDashboard();
-  const su=onSnapshot(collection(db,'showrooms'),snap=>{state.showrooms=snap.docs.map(d=>({id:d.id,...d.data()}));lastShowroomSnapshotTime=new Date();firestoreConnected=!0;isLoading=!1;checkAndNotify();if(currentView==='dashboard')renderDashboard();if(currentView==='analytics')renderAnalytics();},e=>{showToast(parseFirebaseError(e,'Unable to load showrooms'),'error');isLoading=!1;firestoreConnected=!1;});
-  const du=onSnapshot(collection(db,'dealerOnboarding'),snap=>{state.dealers=snap.docs.map(d=>({id:d.id,...d.data()}));lastDealerSnapshotTime=new Date();firestoreConnected=!0;checkAndNotify();if(currentView==='dashboard')renderDashboard();if(currentView==='analytics')renderAnalytics();if(currentView==='dealer')renderDealerView();},e=>{showToast(parseFirebaseError(e,'Unable to load dealers'),'error');firestoreConnected=!1;});
+  const su=onSnapshot(collection(db,'showrooms'),snap=>{state.showrooms=snap.docs.map(d=>({id:d.id,...d.data()}));lastShowroomSnapshotTime=new Date();firestoreConnected=!0;isLoading=!1;if(!hasLoadedFirstShowroomSnapshot){hasLoadedFirstShowroomSnapshot=true;document.getElementById('showroomGrid').innerHTML='';}checkAndNotify();if(currentView==='dashboard')debouncedRenderDashboard();if(currentView==='analytics')debouncedSnapshotInsights();},e=>{showToast(parseFirebaseError(e,'Unable to load showrooms'),'error');isLoading=!1;firestoreConnected=!1;}); // FIXED: 6 debounced snapshot rendering/insights
+  const du=onSnapshot(collection(db,'dealerOnboarding'),snap=>{state.dealers=snap.docs.map(d=>({id:d.id,...d.data()}));lastDealerSnapshotTime=new Date();firestoreConnected=!0;if(!hasLoadedFirstDealerSnapshot){hasLoadedFirstDealerSnapshot=true;document.getElementById('dealerGrid').innerHTML='';}checkAndNotify();if(currentView==='dashboard')debouncedRenderDashboard();if(currentView==='analytics')debouncedSnapshotInsights();if(currentView==='dealer')debouncedRenderDealerView();},e=>{showToast(parseFirebaseError(e,'Unable to load dealers'),'error');firestoreConnected=!1;}); // FIXED: 6 debounced snapshot rendering/insights
   realtimeUnsubscribers=[su,du];previousShowroomState=JSON.parse(JSON.stringify(state.showrooms));previousDealerState=JSON.parse(JSON.stringify(state.dealers));
 }
 
@@ -889,7 +990,7 @@ async function openShowroomDetail(id){
   document.getElementById('showroomDetailContent').innerHTML=`<div style="overflow-x:auto"><table class="phase-table"><thead><tr><th>Phase</th><th>Plan Days</th><th>Target</th><th>Actual</th><th>Status</th><th>Variance</th><th>Notes</th></tr></thead><tbody>${rows}</tbody></table></div><div style="margin-top:20px"><button class="btn btn-success" id="savePhasesBtn"><i class="fas fa-save"></i>Save All</button></div>`;
   document.getElementById('showroomEditBtn').style.display=isAdmin()?'inline-flex':'none';
   document.getElementById('showroomDeleteBtn').style.display=isAdmin()?'inline-flex':'none';
-  document.getElementById('showroomDetailModal').style.display='flex';
+  openModal('showroomDetailModal');
   setShowroomDirty(false);
   trackShowroomModalChanges();
   document.getElementById('savePhasesBtn').onclick=()=>saveShowroomPhases(id);
@@ -899,12 +1000,14 @@ async function openShowroomDetail(id){
 
 // ========== PHASE 3: Optimistic saveShowroomPhases with validation ==========
 async function saveShowroomPhases(id){
-  const s=state.showrooms.find(x=>x.id===id);
-  if(!s)return;
+  const s2=state.showrooms.find(x=>x.id===id);
+  if(!s2)return;
+  const oldPhaseData=JSON.parse(JSON.stringify(s2.data||{})); // FIXED: 1 capture deep copy for rollback
   // PHASE 4: Validate phase dates
-  const startDate=s.startDate?new Date(s.startDate):null;
+  const startDate=s2.startDate?new Date(s2.startDate):null;
   const phaseUpdates={};
   let hasValidationError=false;
+  let hasSlaWarning=false;
   document.querySelectorAll('.phase-date').forEach(i=>{
     const pid=i.dataset.phase;
     const val=i.value;
@@ -922,6 +1025,7 @@ async function saveShowroomPhases(id){
           const diff=Math.ceil((actualDate-targetDate)/86400000);
           if(diff>phaseConfig.days*2){
             i.classList.add('input-error');
+            hasSlaWarning=true;
             showToast(`${phaseConfig.name}: ${diff}d is >2x SLA (${phaseConfig.days}d). Review.`,'warning');
           }else{i.classList.remove('input-error');}
         }
@@ -929,15 +1033,15 @@ async function saveShowroomPhases(id){
     }else{i.classList.remove('input-error');}
   });
   if(hasValidationError){showToast('Fix validation errors before saving','error');return;}
+  if(hasSlaWarning){showToast('Fix highlighted dates before saving — exceeds 2× SLA limit.','error');return;} // FIXED: 13 block save on >2x SLA violation
   
   try{
     document.querySelectorAll('.phase-date').forEach(i=>{const pid=i.dataset.phase;if(!phaseUpdates[pid])phaseUpdates[pid]={};phaseUpdates[pid].actualDate=i.value;});
     document.querySelectorAll('.phase-note').forEach(i=>{const pid=i.dataset.phase;if(!phaseUpdates[pid])phaseUpdates[pid]={};phaseUpdates[pid].reason=i.value;});
     
     // PHASE 3: Optimistic update - update local state immediately
-    const oldData={...s.data};
-    const newData={...s.data,...phaseUpdates};
-    s.data=newData;
+    const newData={...s2.data,...phaseUpdates};
+    s2.data=newData;
     
     // Close modal and refresh UI optimistically
     setShowroomDirty(false);
@@ -946,20 +1050,20 @@ async function saveShowroomPhases(id){
     
     // Sync to Firestore
     const eu={data:newData,updatedAt:serverTimestamp()};
-    if(phaseUpdates.launch?.actualDate&&!oldData.launch?.actualDate){eu.completedAt=serverTimestamp();}
+    if(phaseUpdates.launch?.actualDate&&!oldPhaseData.launch?.actualDate){eu.completedAt=serverTimestamp();}
     await updateDoc(doc(db,'showrooms',id),eu);
     showToast('Phases saved','success');
   }catch(e){
     // PHASE 3: Rollback on error
-    const s2=state.showrooms.find(x=>x.id===id);
-    if(s2)s2.data={...s2.data,...phaseUpdates};// already applied, will be corrected by next realtime sync
+    s2.data=oldPhaseData; // FIXED: 1 rollback restored from pre-save snapshot
+    renderDashboard(); // FIXED: 1 force re-render after rollback
     showToast('Sync failed — data will refresh','error');
   }
 }
 
-function openShowroomEditFromDetail(){
+async function openShowroomEditFromDetail(){
   if(!currentShowroomIdForDetail||!isAdmin())return;
-  if(!checkDirtyBeforeClose('showroomDetailModal'))return;
+  if(!(await checkDirtyBeforeClose('showroomDetailModal')))return;
   const s=state.showrooms.find(x=>x.id===currentShowroomIdForDetail);
   if(!s)return;
   currentEditShowroomId=s.id;
@@ -971,12 +1075,12 @@ function openShowroomEditFromDetail(){
   document.getElementById('edit-showroom-start').value=s.startDate||'';
   setShowroomDirty(false);
   closeModal('showroomDetailModal');
-  document.getElementById('edit-showroom-modal').style.display='flex';
+  openModal('edit-showroom-modal');
 }
 async function deleteShowroomFromDetail(){
   if(!currentShowroomIdForDetail||!isAdmin())return;
   const s=state.showrooms.find(x=>x.id===currentShowroomIdForDetail);
-  if(!confirm(`Delete "${s?.name}"?`))return;
+  if(!(await showConfirm(`Delete "${s?.name}"?`,'Delete Showroom')))return;
   try{
     setShowroomDirty(false);
     await deleteDoc(doc(db,'showrooms',currentShowroomIdForDetail));
@@ -1040,7 +1144,7 @@ async function saveEditDealer(){
 async function openDealerDetail(id){
   const d=state.dealers.find(x=>x.id===id);
   if(!d)return;
-  if(!checkDirtyBeforeClose('dealerDetailModal')){document.getElementById('dealerDetailModal').style.display='flex';return;}
+  if(!(await checkDirtyBeforeClose('dealerDetailModal'))){openModal('dealerDetailModal');return;}
   currentDealerIdForDetail=id;
   document.getElementById('detailDealerName').textContent=d.name;
   const cs=d.currentStage||'Interested',si=DEALER_STAGES.indexOf(cs),tl=calcDealerTimeline(d),days=calcDealerDayMetrics(d),ir=isRejectedDealer(d);
@@ -1057,7 +1161,7 @@ async function openDealerDetail(id){
   document.getElementById('dealerDetailContent').innerHTML=ih+rh+sh+dh;
   document.getElementById('dealerEditBtn').style.display=isAdmin()?'inline-flex':'none';
   document.getElementById('dealerDeleteBtn').style.display=isAdmin()?'inline-flex':'none';
-  document.getElementById('dealerDetailModal').style.display='flex';
+  openModal('dealerDetailModal');
   setDealerDirty(false);
   trackDealerModalChanges(d);
   document.querySelectorAll('.stage-step').forEach(btn=>{if(!ir)btn.addEventListener('click',()=>updateDealerStage(id,btn.getAttribute('data-stage')));});
@@ -1078,10 +1182,10 @@ async function updateDealerStage(id,ns){
     document.getElementById('rejectionTitle').textContent=`Rejection Reason — ${d.name}`;
     document.getElementById('rejectionReasonText').value='';
     closeModal('dealerDetailModal');
-    document.getElementById('rejectionReasonModal').style.display='flex';
+    openModal('rejectionReasonModal');
     return;
   }
-  if(!confirm(`Move "${d.name}" ${cs} → ${ns}?`))return;
+  if(!(await showConfirm(`Move "${d.name}" ${cs} → ${ns}?`,'Confirm Stage Change')))return;
   await executeDealerStageUpdate(id,ns,null);
 }
 
@@ -1095,7 +1199,7 @@ async function executeDealerStageUpdate(id,ns,rr){
   
   try{
     const sl={...(d.stageLog||{})};
-    if(!sl[ns])sl[ns]=new Date().toISOString();
+    if(!sl[ns])sl[ns]='pending-server-time';
     
     // PHASE 3: Optimistic local update
     d.currentStage=ns;
@@ -1107,7 +1211,9 @@ async function executeDealerStageUpdate(id,ns,rr){
     if(currentView==='dashboard')renderDashboard();
     
     // Sync to Firestore
-    let up={currentStage:ns,stageLog:sl,updatedAt:serverTimestamp()};
+    let up={currentStage:ns,updatedAt:serverTimestamp()};
+    up[`stageLog.${ns}`]=firebase.firestore.FieldValue.serverTimestamp(); // FIXED: 5 use server timestamp for stageLog writes
+    up.stageLogEntries=firebase.firestore.FieldValue.arrayUnion({stage:ns,enteredAt:firebase.firestore.FieldValue.serverTimestamp(),autoPromoted:false}); // FIXED: 5 append server-auth stage entry
     if(ns==='Onboarded'){up.status='Completed';up.completedAt=serverTimestamp();}
     else if(ir){up.status='Dropped';up.rejectionReason=rr||'';up.rejectedAt=new Date().toISOString();up.rejectedBy=currentUserEmail||'Unknown';}
     else{up.status='Active';}
@@ -1127,7 +1233,7 @@ async function confirmRejection(){
   const rr=document.getElementById('rejectionReasonText').value.trim();
   if(!rr){showToast('Provide reason','warning');return;}
   if(!pendingRejectionDealerId||!pendingRejectionStage)return;
-  document.getElementById('rejectionReasonModal').style.display='none';
+  closeModal('rejectionReasonModal');
   await executeDealerStageUpdate(pendingRejectionDealerId,pendingRejectionStage,rr);
   pendingRejectionDealerId=null;pendingRejectionStage=null;
 }
@@ -1143,7 +1249,7 @@ async function updateDealerDoc(id,dk,ch){
     // PHASE 3: Optimistic update
     d.documents=docs;
     const up={documents:docs,updatedAt:serverTimestamp()};
-    if(DOC_KEYS.every(k=>docs[k])){up.currentStage='Onboarded';up.status='Completed';up.completedAt=serverTimestamp();}
+    if(DOC_KEYS.every(k=>docs[k])){up.currentStage='Onboarded';up.status='Completed';up.completedAt=serverTimestamp();up['stageLog.Onboarded']=firebase.firestore.FieldValue.serverTimestamp();up.stageLogEntries=firebase.firestore.FieldValue.arrayUnion({stage:'Onboarded',enteredAt:firebase.firestore.FieldValue.serverTimestamp(),autoPromoted:true});d.currentStage='Onboarded';d.status='Completed';d.stageLog={...(d.stageLog||{}),Onboarded:'pending-server-time'};} // FIXED: 4 auto-promotion writes server timestamp + arrayUnion stage log entry
     await updateDoc(doc(db,'dealerOnboarding',id),up);
     showToast('Updated','success');
     await openDealerDetail(id);
@@ -1156,9 +1262,9 @@ async function updateDealerDoc(id,dk,ch){
   }
 }
 
-function openDealerEditFromDetail(){
+async function openDealerEditFromDetail(){
   if(!currentDealerIdForDetail||!isAdmin())return;
-  if(!checkDirtyBeforeClose('dealerDetailModal'))return;
+  if(!(await checkDirtyBeforeClose('dealerDetailModal')))return;
   const d=state.dealers.find(x=>x.id===currentDealerIdForDetail);
   if(!d)return;
   if(isRejectedDealer(d)){showToast('Cannot edit rejected','warning');return;}
@@ -1171,12 +1277,12 @@ function openDealerEditFromDetail(){
   document.getElementById('edit-dealer-start').value=d.startDate||'';
   setDealerDirty(false);
   closeModal('dealerDetailModal');
-  document.getElementById('edit-dealer-modal').style.display='flex';
+  openModal('edit-dealer-modal');
 }
 async function deleteDealerFromDetail(){
   if(!currentDealerIdForDetail||!isAdmin())return;
   const d=state.dealers.find(x=>x.id===currentDealerIdForDetail);
-  if(!confirm(`Delete "${d?.name}"?`))return;
+  if(!(await showConfirm(`Delete "${d?.name}"?`,'Delete Dealer')))return;
   try{
     setDealerDirty(false);
     await deleteDoc(doc(db,'dealerOnboarding',currentDealerIdForDetail));
@@ -1207,7 +1313,7 @@ function toggleAuthenticatedUI(){
 onAuthStateChanged(auth,async user=>{
   if(!user){cleanupListeners();currentUserId=null;userRole=null;currentUserEmail=null;state={showrooms:[],dealers:[]};notifications=[];previousShowroomState=[];previousDealerState=[];toggleAuthenticatedUI();return;}
   currentUserId=user.uid;currentUserEmail=user.email;
-  try{await loadUserRole(user.uid);toggleAuthenticatedUI();initRealtime();loadFilterState();showDashboard();}
+  try{await loadUserRole(user.uid);toggleAuthenticatedUI();hasLoadedFirstShowroomSnapshot=false;hasLoadedFirstDealerSnapshot=false;showSkeletons('showroomGrid',6);showSkeletons('dealerGrid',6);initRealtime();loadFilterState();showDashboard();} // FIXED: 12 skeletons before first snapshots
   catch(e){showToast('Unable to load role','error');try{await signOut(auth);}catch(_){}}
 });
 
@@ -1241,21 +1347,28 @@ document.addEventListener('DOMContentLoaded',()=>{
   document.getElementById('collapseBriefBtn').addEventListener('click',()=>{const body=document.getElementById('execBriefBody');const icon=document.querySelector('#collapseBriefBtn i');if(body.style.display==='none'){body.style.display='grid';icon.className='fas fa-chevron-up';}else{body.style.display='none';icon.className='fas fa-chevron-down';}});
   document.getElementById('refreshBriefBtn').addEventListener('click',()=>{generateExecutiveBrief();showToast('Brief refreshed','success');});
   // Modal close with dirty check
-  document.querySelectorAll('.modal-close, [data-modal]').forEach(btn=>{btn.addEventListener('click',(e)=>{const mid=btn.getAttribute('data-modal');if(mid){if(!checkDirtyBeforeClose(mid))return;closeModal(mid);}});});
-  document.querySelectorAll('.modal-overlay').forEach(ov=>{ov.addEventListener('click',e=>{if(e.target===ov){const mid=ov.id;if(!checkDirtyBeforeClose(mid))return;ov.style.display='none';}});});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'){const openModals=[...document.querySelectorAll('.modal-overlay')].filter(m=>m.style.display==='flex');for(const m of openModals){if(!checkDirtyBeforeClose(m.id))return;m.style.display='none';}}});
+  document.querySelectorAll('.modal-close, [data-modal]').forEach(btn=>{btn.addEventListener('click',async()=>{const mid=btn.getAttribute('data-modal');if(mid){if(!(await checkDirtyBeforeClose(mid)))return;closeModal(mid);}});});
+  document.querySelectorAll('.modal-overlay').forEach(ov=>{ov.addEventListener('click',async e=>{if(e.target===ov){const mid=ov.id;if(!(await checkDirtyBeforeClose(mid)))return;closeModal(mid);}});});
+  document.addEventListener('keydown',async e=>{if(e.key==='Escape'){const openModals=[...document.querySelectorAll('.modal-overlay.show-flex')];const topModal=openModals[openModals.length-1];if(!topModal)return;if(!(await checkDirtyBeforeClose(topModal.id)))return;closeModal(topModal.id);}}); // FIXED: 8 close topmost modal on Escape
   document.getElementById('notifBellBtn').addEventListener('click',(e)=>{e.stopPropagation();const dd=document.getElementById('notifDropdown');dd.classList.toggle('show');});
   document.addEventListener('click',(e)=>{const w=document.getElementById('notifBellWrap');if(w&&!w.contains(e.target))document.getElementById('notifDropdown').classList.remove('show');});
   document.getElementById('markAllReadBtn').addEventListener('click',markAllNotificationsRead);
   document.getElementById('clearAllNotifsBtn').addEventListener('click',clearAllNotifications);
-  const drd=debounce(()=>renderDashboard(),300),drdl=debounce(()=>renderDealerView(),300);
-  document.getElementById('globalSearch').addEventListener('input',drd);
+  document.getElementById('globalSearch').addEventListener('input',debounce(()=>renderDashboard(),300));
   document.getElementById('filterRM').addEventListener('change',renderDashboard);
   document.getElementById('filterShowroomStage').addEventListener('change',renderDashboard);
   document.getElementById('dealerFilterStatus').addEventListener('change',renderDealerView);
   document.getElementById('dealerFilterStage').addEventListener('change',renderDealerView);
   document.getElementById('dealerFilterRM').addEventListener('change',renderDealerView);
-  document.getElementById('dealerSearch').addEventListener('input',drdl);
+  document.getElementById('dealerSearch').addEventListener('input',debounce(()=>renderDealerView(),300));
+  document.getElementById('confirmModalOk').addEventListener('click',()=>resolveConfirm(true));
+  document.getElementById('confirmModalCancel').addEventListener('click',()=>resolveConfirm(false));
+  document.getElementById('confirmModalClose').addEventListener('click',()=>resolveConfirm(false));
+  const sidebar=document.getElementById('sidebar'),overlay=document.getElementById('sidebarOverlay');
+  const closeSidebar=()=>{sidebar.classList.remove('mobile-open');overlay.classList.remove('active');};
+  document.getElementById('hamburgerBtn').addEventListener('click',()=>{sidebar.classList.toggle('mobile-open');overlay.classList.toggle('active');});
+  overlay.addEventListener('click',closeSidebar);
+  document.querySelectorAll('.sidebar .nav-item').forEach(n=>n.addEventListener('click',()=>{if(window.innerWidth<=768)closeSidebar();}));
   populateDealerStageFilter();populateShowroomStageFilter();
 });
 </script>
