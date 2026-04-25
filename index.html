@@ -963,7 +963,6 @@ async function openShowroomDetail(id){
 async function saveShowroomPhases(id){
   const s=state.showrooms.find(x=>x.id===id);if(!s)return;
   const startDate=s.startDate?new Date(s.startDate):null;const phaseUpdates={};let hasValidationError=false;
-  // Merge resolution: keep explicit branch structure to avoid parser ambiguity from compressed inline if/else.
   document.querySelectorAll('.phase-date').forEach(i=>{
     const pid=i.dataset.phase;
     const val=i.value;
