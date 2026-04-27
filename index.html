@@ -4808,8 +4808,8 @@
       const greenCount = enriched.filter(k=>k.metrics.status==="green").length;
       const _total = greenCount + amberCount + redCount || 1;
       mixChart = new Chart(mixCanvas.getContext("2d"), { type:"doughnut", data:{ labels:["Green","Amber","Red"], datasets:[{ data:[greenCount, amberCount, redCount], backgroundColor:["#22c55e","#f97316","#ef4444"] }] }, options:{ cutout:"60%", plugins:{ legend:{ position:"bottom", labels:{ color:"var(--text-muted)" } },
-        datalabels: { display: ctx => (ctx.dataset.data[ctx.dataIndex]||0) > 0, color:'#fff', font:{ size:10, weight:'700' }, formatter: (v, ctx) => { const t = ctx.dataset.data.reduce((a,b)=>a+b,0)||1; return v > 0 ? v+' ('+fmt(v/t*100)+'%)' : ''; } }
-      } } } });
+      datalabels: { display: ctx => (ctx.dataset.data[ctx.dataIndex]||0) > 0, color:'#fff', font:{ size:10, weight:'700' }, formatter: (v, ctx) => { const t = ctx.dataset.data.reduce((a,b)=>a+b,0)||1; return v > 0 ? v+' ('+fmt(v/t*100)+'%)' : ''; } }
+      } } });
     }
 
     const heatContainer = document.getElementById("heatmapContainer");
